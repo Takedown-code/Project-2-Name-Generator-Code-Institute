@@ -7,17 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameChartCanvas = document.getElementById("nameChart");
     
     let savedNames = [];
+    let nameChart = null; // Store Chart.js instance
+    
     let trendingNames = {
-        "James": 30_000_000,
-        "Mary": 38_000_000,
-        "John": 45_000_000,
-        "Patricia": 32_000_000,
-        "Robert": 25_000_000,
-        "Jennifer": 23_000_000,
-        "Michael": 39_000_000,
-        "Linda": 28_000_000,
-        "William": 27_000_000,
-        "Elizabeth": 22_000_000
+        "James": 30000000,
+        "Mary": 38000000,
+        "John": 45000000,
+        "Patricia": 32000000,
+        "Robert": 25000000,
+        "Jennifer": 23000000,
+        "Michael": 39000000,
+        "Linda": 28000000,
+        "William": 27000000,
+        "Elizabeth": 22000000
     };
     
     function generateName() {
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fantasy: ["Eloria", "Zyphos", "Draven", "Seraphis", "Vexis", "Mythran", "Aerion", "Sylvara", "Vaelith", "Zephyrus", "Ash", "Thorne", "Eldrin", "Solara", "Kaelith"],
             baby: ["Aria", "Noah", "Liam", "Sophia", "Ella", "Emma", "Olivia", "Mason", "Lucas", "Ethan"].concat(Object.keys(trendingNames)),
             "sci-fi": ["Xyron", "Tiberius", "Nova", "Zephyr", "Orion", "Quasar", "Lyra", "Zenthos", "Aether", "Neon", "Vortex", "Xenon", "Zypher", "Omicron", "Hyperion"],
-            mystical: ["Liora", "Azrael", "Celestia", "Rune", "Mythos", "Seraphina", "Nyx", "Eldrin", "Thalora", "Draven", "Talon", "Mystara", "Zephara", "Sable", "Orin" ]
+            mystical: ["Liora", "Azrael", "Celestia", "Rune", "Mythos", "Seraphina", "Nyx", "Eldrin", "Thalora", "Draven", "Talon", "Mystara", "Zephara", "Sable", "Orin"]
         };
         
         const selectedType = nameType.value;
@@ -33,14 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomName = nameList[Math.floor(Math.random() * nameList.length)];
         nameResult.textContent = randomName;
         nameResult.style.display = "block";
-        
-        // Update trending names count
-        if (trendingNames[randomName]) {
-            trendingNames[randomName] += 1;
-        } else {
-            trendingNames[randomName] = 1;
-        }
-        updateChart();
     }
     
     function saveName() {
@@ -54,7 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function updateChart() {
         const ctx = nameChartCanvas.getContext("2d");
-        new Chart(ctx, {
+        
+        // Destroy existing chart instance before creating a new one
+        if (nameChart) {
+            nameChart.destroy();
+        }
+        
+        nameChart = new Chart(ctx, {
             type: "bar",
             data: {
                 labels: Object.keys(trendingNames),
