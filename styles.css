@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+h1, h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Saved Names Section - Moved to Bottom */
+#saved-names-container {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+    width: 80%;
+    margin-top: 20px;
+}
+
+#saved-names-container h2 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul li {
+    background: #2c3e50;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    display: inline-block;
+} 
+
+/* Form Elements */
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+select, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+select {
+    background: #fff;
+    color: #2c3e50;
+    width: 100%;
+}
+
+button {
+    background: #4ca1af;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2c3e50;
+}
+
+/* Result Styling */
+.result {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    background: #4ca1af;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Trending Names Chart */
+canvas {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}

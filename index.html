@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Name Generator</h1>
+        <label for="name-type">Select Name Type:</label>
+        <select id="name-type">
+            <option value="fantasy">Fantasy</option>
+            <option value="baby">Baby</option>
+            <option value="sci-fi">Sci-Fi</option>
+            <option value="mystical">Mystical</option>
+        </select>
+        <button id="generate-btn">Generate Name</button>
+        
+        <div id="name-result" class="result"></div>
+        
+        <button id="save-btn">Save Name</button>
+        
+        <h2>Trending Names</h2>
+        <canvas id="nameChart"></canvas>
+        
+        <h2>Saved Names</h2>
+        <ul id="saved-names"></ul>
+    </div>
+</body>
+</html>
