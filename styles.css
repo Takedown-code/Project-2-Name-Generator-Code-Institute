@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    max-width: 90%; /* Responsive instead of fixed width */
     max-width: 600px;
     margin: 50px auto;
     background: rgba(0, 0, 0, 0.8);
@@ -18,6 +19,7 @@ body {
     position: relative;
 }
 
+/* Typography */
 h1, h2 {
     font-size: 24px;
     margin-bottom: 15px;
@@ -43,6 +45,7 @@ h1, h2 {
     margin-bottom: 10px;
 }
 
+/* Saved Names List */
 ul {
     list-style: none;
     padding: 0;
@@ -53,14 +56,15 @@ ul {
 }
 
 ul li {
-    background: #2c3e50;
+    background: rgba(255, 255, 255, 0.15); /* Adjusted to be more visible */
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
     font-weight: bold;
     display: inline-block;
-} 
+    color: #fff; /* Ensuring text is visible */
+}
 
 /* Form Elements */
 label {
@@ -86,13 +90,14 @@ button {
     background: #4ca1af;
     color: #fff;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s;
     width: 100%;
     margin-top: 10px;
 }
 
 button:hover {
-    background: #2c3e50;
+    background: #1e2b37;
+    transform: scale(1.05); /* Slight hover effect */
 }
 
 /* Result Styling */
@@ -108,7 +113,7 @@ button:hover {
 
 /* Trending Names Chart */
 canvas {
-    background: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Adjusted to match dark theme */
     padding: 10px;
     border-radius: 5px;
 }
